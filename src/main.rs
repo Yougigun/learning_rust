@@ -1,17 +1,10 @@
-
 fn main() {
-    let arr = [1, 2, 3, 4, 5];
-    let vec = vec![1, 2, 3, 4, 5];
-    let s1 = &arr[..3];
-    let s2 = &vec[..2];
-    println!("s1: {:?}, s2: {:?}", s1, s2);
-
-    // &[T] 和 &[T] 是否相等取决于长度和内容是否相等
-    assert_eq!(s1, s2);
-    // &[T] 可以和 Vec<T>/[T;n] 比较，也会看长度和内容
-    assert_eq!(&arr[..], vec);
-    assert_eq!(&vec[..], arr);
-    // vec can also compare to arr
-    assert_eq!(vec, arr);
-
+    // 这里 Vec<T> 在调用 iter() 时被解引用成 &[T]，所以可以访问 iter()
+    let result = vec![1, 2, 3, 4]
+        .iter()
+        .map(|v| v * v)
+        .filter(|v| *v < 16)
+        .take(1)
+        .collect::<Vec<_>>();
+    println!("{:?}", result);
 }
