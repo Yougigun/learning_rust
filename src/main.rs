@@ -1,33 +1,17 @@
 
-use std::ops::{Deref, DerefMut};
-
-#[derive(Debug)]
-struct Buffer<T>(Vec<T>);
-
-impl<T> Buffer<T> {
-    pub fn new(v: impl Into<Vec<T>>) -> Self {
-        Self(v.into())
-    }
-}
-
-impl<T> Deref for Buffer<T> {
-    type Target = [T];
-
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-
-impl<T> DerefMut for Buffer<T> {
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut (self.0)
-    }
-}
-
 fn main() {
-    let mut buf = Buffer::new([1, 3, 2, 4]);
-    // 因为实现了 Deref 和 DerefMut，这里 buf 可以直接访问 Vec<T> 的方法
-    // 下面这句相当于：(&mut buf).deref_mut().sort()，也就是 (&mut buf.0).sort()
-    buf.sort();   
-    println!("buf: {:?}", buf);
+    let arr = [1, 2, 3, 4, 5];
+    let vec = vec![1, 2, 3, 4, 5];
+    let s1 = &arr[..3];
+    let s2 = &vec[..2];
+    println!("s1: {:?}, s2: {:?}", s1, s2);
+
+    // &[T] 和 &[T] 是否相等取决于长度和内容是否相等
+    assert_eq!(s1, s2);
+    // &[T] 可以和 Vec<T>/[T;n] 比较，也会看长度和内容
+    assert_eq!(&arr[..], vec);
+    assert_eq!(&vec[..], arr);
+    // vec can also compare to arr
+    assert_eq!(vec, arr);
+
 }
