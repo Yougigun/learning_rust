@@ -1,12 +1,4 @@
-[package]
-name = "learning_rust"
-version = "0.1.0"
-edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[dependencies]
-
-[[bin]]
-name = "daemon"
-path = "src/daemon/bin/main.rs"
+[workspace]
+members = [
+    "package_and_crate"
+]

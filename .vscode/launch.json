@@ -12,7 +12,7 @@
                 "args": [
                     "build",
                     "--bin=daemon",
-                    "--package=learning_rust"
+                    "--package=package_and_crate"
                 ],
                 "filter": {
                     "name": "daemon",
@@ -31,7 +31,7 @@
                     "test",
                     "--no-run",
                     "--bin=daemon",
-                    "--package=learning_rust"
+                    "--package=package_and_crate"
                 ],
                 "filter": {
                     "name": "daemon",
@@ -44,15 +44,15 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug executable 'learning_rust'",
+            "name": "Debug executable 'package_and_crate'",
             "cargo": {
                 "args": [
                     "build",
-                    "--bin=learning_rust",
-                    "--package=learning_rust"
+                    "--bin=package_and_crate",
+                    "--package=package_and_crate"
                 ],
                 "filter": {
-                    "name": "learning_rust",
+                    "name": "package_and_crate",
                     "kind": "bin"
                 }
             },
@@ -62,16 +62,16 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug unit tests in executable 'learning_rust'",
+            "name": "Debug unit tests in executable 'package_and_crate'",
             "cargo": {
                 "args": [
                     "test",
                     "--no-run",
-                    "--bin=learning_rust",
-                    "--package=learning_rust"
+                    "--bin=package_and_crate",
+                    "--package=package_and_crate"
                 ],
                 "filter": {
-                    "name": "learning_rust",
+                    "name": "package_and_crate",
                     "kind": "bin"
                 }
             },
@@ -86,7 +86,7 @@
                 "args": [
                     "build",
                     "--bin=client",
-                    "--package=learning_rust"
+                    "--package=package_and_crate"
                 ],
                 "filter": {
                     "name": "client",
@@ -105,7 +105,7 @@
                     "test",
                     "--no-run",
                     "--bin=client",
-                    "--package=learning_rust"
+                    "--package=package_and_crate"
                 ],
                 "filter": {
                     "name": "client",
