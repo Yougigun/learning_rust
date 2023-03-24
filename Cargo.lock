@@ -5,3 +5,7 @@ version = 3
 [[package]]
 name = "package_and_crate"
 version = "0.1.0"
+
+[[package]]
+name = "pro2"
+version = "0.1.0"

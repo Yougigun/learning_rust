@@ -1,4 +1,5 @@
 [workspace]
 members = [
-    "package_and_crate"
+    "package_and_crate",
+    "pro2"
 ]
