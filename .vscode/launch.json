@@ -1,119 +1,144 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "lldb",
-            "request": "launch",
-            "name": "Debug executable 'daemon'",
-            "cargo": {
-                "args": [
-                    "build",
-                    "--bin=daemon",
-                    "--package=package_and_crate"
-                ],
-                "filter": {
-                    "name": "daemon",
-                    "kind": "bin"
-                }
-            },
-            "args": [],
-            "cwd": "${workspaceFolder}"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "name": "Debug unit tests in executable 'daemon'",
-            "cargo": {
-                "args": [
-                    "test",
-                    "--no-run",
-                    "--bin=daemon",
-                    "--package=package_and_crate"
-                ],
-                "filter": {
-                    "name": "daemon",
-                    "kind": "bin"
-                }
-            },
-            "args": [],
-            "cwd": "${workspaceFolder}"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "name": "Debug executable 'package_and_crate'",
-            "cargo": {
-                "args": [
-                    "build",
-                    "--bin=package_and_crate",
-                    "--package=package_and_crate"
-                ],
-                "filter": {
-                    "name": "package_and_crate",
-                    "kind": "bin"
-                }
-            },
-            "args": [],
-            "cwd": "${workspaceFolder}"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "name": "Debug unit tests in executable 'package_and_crate'",
-            "cargo": {
-                "args": [
-                    "test",
-                    "--no-run",
-                    "--bin=package_and_crate",
-                    "--package=package_and_crate"
-                ],
-                "filter": {
-                    "name": "package_and_crate",
-                    "kind": "bin"
-                }
-            },
-            "args": [],
-            "cwd": "${workspaceFolder}"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "name": "Debug executable 'client'",
-            "cargo": {
-                "args": [
-                    "build",
-                    "--bin=client",
-                    "--package=package_and_crate"
-                ],
-                "filter": {
-                    "name": "client",
-                    "kind": "bin"
-                }
-            },
-            "args": [],
-            "cwd": "${workspaceFolder}"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "name": "Debug unit tests in executable 'client'",
-            "cargo": {
-                "args": [
-                    "test",
-                    "--no-run",
-                    "--bin=client",
-                    "--package=package_and_crate"
-                ],
-                "filter": {
-                    "name": "client",
-                    "kind": "bin"
-                }
-            },
-            "args": [],
-            "cwd": "${workspaceFolder}"
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug executable 'daemon'",
+      "cargo": {
+        "args": ["build", "--bin=daemon", "--package=package_and_crate"],
+        "filter": {
+          "name": "daemon",
+          "kind": "bin"
         }
-    ]
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in executable 'daemon'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--bin=daemon",
+          "--package=package_and_crate"
+        ],
+        "filter": {
+          "name": "daemon",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug executable 'package_and_crate'",
+      "cargo": {
+        "args": [
+          "build",
+          "--bin=package_and_crate",
+          "--package=package_and_crate"
+        ],
+        "filter": {
+          "name": "package_and_crate",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in executable 'package_and_crate'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--bin=package_and_crate",
+          "--package=package_and_crate"
+        ],
+        "filter": {
+          "name": "package_and_crate",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug executable 'client'",
+      "cargo": {
+        "args": ["build", "--bin=client", "--package=package_and_crate"],
+        "filter": {
+          "name": "client",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in executable 'client'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--bin=client",
+          "--package=package_and_crate"
+        ],
+        "filter": {
+          "name": "client",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug executable 'define_module'",
+      "cargo": {
+        "args": ["build", "--package=define_module"],
+        "filter": {
+          "name": "define_module",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in executable 'define_module'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--bin=define_module",
+          "--package=define_module"
+        ],
+        "filter": {
+          "name": "define_module",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    }
+  ]
 }

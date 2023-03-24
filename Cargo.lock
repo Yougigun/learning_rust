@@ -3,5 +3,13 @@
 version = 3
 
 [[package]]
+name = "best_practices_for_pkg_with_bin_and_lib"
+version = "0.1.0"
+
+[[package]]
+name = "define_module"
+version = "0.1.0"
+
+[[package]]
 name = "package_and_crate"
 version = "0.1.0"
