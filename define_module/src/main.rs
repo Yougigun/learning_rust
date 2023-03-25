@@ -30,4 +30,8 @@ fn main() {
 
     use crate::toilet::sink::clean_sink;
     clean_sink();
+
+    use rand::Rng; // in order to use the methods "gen_range" of Rng trait
+    let random_number = rand::thread_rng().gen_range(1..=100); 
+    println!("random number is {}", random_number);
 }
