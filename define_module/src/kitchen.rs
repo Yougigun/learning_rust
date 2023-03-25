@@ -9,7 +9,7 @@ fn private_cook() {
 
 // sub module
 pub mod kitchen {
-    use crate::toilet::{sink::{clean_sink}, bath::bath_clean};
+    use crate::toilet::{bath::bath_clean, sink::clean_sink};
 
     pub fn fire() {
         println!("fire");
@@ -24,4 +24,23 @@ use crate::toilet::sink::clean_sink;
 
 pub fn fire() {
     kitchen::fire();
+}
+
+mod module_parent {
+    pub mod module2 {
+        pub fn function() {
+            println!("called `module1::module2::function()`");
+        }
+    }
+    // privare function
+    fn private_function() {
+        println!("called `module1::private_function()`");
+    }
+    pub mod module3 {
+        pub fn function() {
+            super::module2::function();
+            super::private_function();
+            println!("called `module1::module3::function()`");
+        }
+    }
 }

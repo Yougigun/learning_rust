@@ -1,5 +1,6 @@
 use lib::Server;
 use lib::SubServer;
+// use best_practices_for_pkg_with_bin_and_lib;
 fn main() {
     let server = Server::new();
     // print server name
