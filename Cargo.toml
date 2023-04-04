@@ -4,5 +4,6 @@ members = [
     "define_module",
     "best_practices_for_pkg_with_bin_and_lib",
     "common_collections",
+    "error_handling",
     "rustlings"
 ]
