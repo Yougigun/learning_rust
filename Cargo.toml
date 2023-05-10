@@ -6,5 +6,8 @@ members = [
     "common_collections",
     "error_handling",
     "rustlings",
-    "generic_types_traits_and_lifetimes"
+    "generic_types_traits_and_lifetimes",
+    "writing_automated_tests",
+    "minigrep",
+    "for_test_code"
 ]

@@ -1,0 +1,21 @@
+    Finished test [unoptimized + debuginfo] target(s) in 0.01s
+     Running unittests src/main.rs (target/debug/deps/writing_automated_tests-af9d772b7d158df2)
+
+running 3 tests
+test tests::it_works_ignore ... ignored, no reason
+test tests::it_works ... ok
+test tests::it_does_not_work ... FAILED
+
+failures:
+
+---- tests::it_does_not_work stdout ----
+thread 'tests::it_does_not_work' panicked at 'Make this test fail', writing_automated_tests/src/main.rs:41:9
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    tests::it_does_not_work
+
+test result: FAILED. 1 passed; 1 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `-p writing_automated_tests --bin writing_automated_tests`
