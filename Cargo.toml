@@ -9,5 +9,6 @@ members = [
     "generic_types_traits_and_lifetimes",
     "writing_automated_tests",
     "minigrep",
-    "for_test_code"
+    "for_test_code",
+    "functional_language",
 ]
