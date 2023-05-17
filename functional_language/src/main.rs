@@ -82,17 +82,27 @@ enum ShirtColor {
     Red,
     Blue,
 }
-
+/// A collection of shirts in a particular size.
+/// # Examples
+/// ```
+/// let store = crate::Inventory {
+///    shirts: vec![ShirtColor::Blue, ShirtColor::Red, ShirtColor::Blue],
+/// };
+/// let user_pref1 = Some(ShirtColor::Red);
+/// let giveaway1 = store.giveaway(user_pref1);
+/// assert_eq!(giveaway1, ShirtColor::Red);
+/// ```
 struct Inventory {
     shirts: Vec<ShirtColor>,
 }
 
 impl Inventory {
+    /// Giveaway a shirt based on user's preference or the most stocked one.
     fn giveaway(&self, user_preference: Option<ShirtColor>) -> ShirtColor {
         // ps: due to ShirtColor has implemented Copy, so Option is also copyable without being taken ownership
         user_preference.unwrap_or_else(|| self.most_stocked())
     }
-
+    /// Find the most stocked shirt color in the inventory.
     fn most_stocked(&self) -> ShirtColor {
         let mut num_red = 0;
         let mut num_blue = 0;

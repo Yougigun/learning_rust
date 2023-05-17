@@ -1,5 +1,8 @@
 use std::{env, error::Error, fs};
 
+//adding documentation comments to the library's public API
+/// Config struct
+///  
 pub struct Config {
     query: String,
     file_path: String,
@@ -41,6 +44,60 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
+//adding documentation comments to the library's public API
+/// search function
+/// 
+/// # Examples
+/// 
+/// ```
+/// use minigrep::search;
+/// let query = "duct";
+/// let contents = "\
+/// Rust:
+/// safe, fast, productive.
+/// Pick three.
+/// Duct tape.";
+/// assert_eq!(vec!["safe, fast, productive."], search(query, contents))
+/// ```
+/// 
+/// # Panics
+/// 
+/// ```
+/// use minigrep::search;
+/// let query = "duct";
+/// let contents = "\
+/// Rust:
+/// safe, fast, productive.
+/// Pick three.
+/// Duct tape.";
+/// assert_eq!(vec!["safe, fast, productive."], search(query, contents))
+/// ```
+/// 
+/// # Errors
+/// 
+/// ```
+/// use minigrep::search;
+/// let query = "duct";
+/// let contents = "\
+/// Rust:
+/// safe, fast, productive.
+/// Pick three.
+/// Duct tape.";
+/// assert_eq!(vec!["safe, fast, productive."], search(query, contents))
+/// ```
+/// 
+/// # Safety
+/// 
+/// ```
+/// use minigrep::search;
+/// let query = "duct";
+/// let contents = "\
+/// Rust:
+/// safe, fast, productive.
+/// Pick three.
+/// Duct tape.";
+/// assert_eq!(vec!["safe, fast, productive."], search(query, contents))
+/// ```
 pub fn search<'a>(query: &'a str, contents: &'a str) -> Vec<&'a str> {
     // let mut results = Vec::new();
     // for line in contents.lines() {

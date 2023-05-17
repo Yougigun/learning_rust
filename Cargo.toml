@@ -11,4 +11,5 @@ members = [
     "minigrep",
     "for_test_code",
     "functional_language",
+    "smart_pointers",
 ]
