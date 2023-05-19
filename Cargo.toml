@@ -12,4 +12,5 @@ members = [
     "for_test_code",
     "functional_language",
     "smart_pointers",
+    "fearless_concurrency",
 ]
