@@ -13,4 +13,5 @@ members = [
     "functional_language",
     "smart_pointers",
     "fearless_concurrency",
+    "object_oriented_features_of_rust",
 ]
