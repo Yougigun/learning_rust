@@ -268,23 +268,35 @@ fn main() {
 
         println!("at the end: x = {:?}, y = {}", x, y);
 
+        let y = false;
+        let x = Some(4);
+        match x {
+            Some(x) if y => println!("{x}"),  // this will not be executed
+            Some(x) if !y => println!("{x}"), // this will not be executed
+            Some(x) => println!("{x}"),       // for catch all
+            None => panic!("Silly compiler"), // for catch all
+        }
         // @ Bindings
         // Sometimes we want to test a value as part of a pattern, and also
         // assign that value to a variable. We can do this with the at operator
         enum Message {
-            Hello { id: i32 },
+            Hello { id: i32, text: &'static str },
         }
 
-        let msg = Message::Hello { id: 5 };
+        let msg = Message::Hello {
+            id: 5,
+            text: "hello",
+        };
 
         match msg {
             Message::Hello {
                 id: id_variable @ 3..=7,
+                text: _, // cannot text filed in the scope
             } => println!("Found an id in range: {}", id_variable),
-            Message::Hello { id: 10..=12 } => {
-                println!("Found an id in another range")
-            }
-            Message::Hello { id } => println!("Found some other id: {}", id),
+            // Message::Hello { id: 10..=12 } => {
+            //     println!("Found an id({}) in another range",id)
+            // } // cannot compile
+            Message::Hello { id, text: _ } => println!("Found some other id: {}", id),
         }
     }
 }
