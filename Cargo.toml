@@ -15,5 +15,6 @@ members = [
     "fearless_concurrency",
     "object_oriented_features_of_rust",
     "patterns_and_matching",
-    "unsafe_rust"
+    "unsafe_rust",
+    "advanced_traits",
 ]
