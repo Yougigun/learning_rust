@@ -17,4 +17,5 @@ members = [
     "patterns_and_matching",
     "unsafe_rust",
     "advanced_traits",
+    "advanced_types",
 ]
