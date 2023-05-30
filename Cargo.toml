@@ -22,4 +22,5 @@ members = [
     "macros",
     "macros/hello_macro",
     "macros/hello_macro/hello_macro_derive",
+    "multithreaded_web_server",
 ]
