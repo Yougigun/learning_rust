@@ -18,4 +18,5 @@ members = [
     "unsafe_rust",
     "advanced_traits",
     "advanced_types",
+    "advanced_function_and_closures"
 ]
