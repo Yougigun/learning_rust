@@ -18,5 +18,8 @@ members = [
     "unsafe_rust",
     "advanced_traits",
     "advanced_types",
-    "advanced_function_and_closures"
+    "advanced_function_and_closures",
+    "macros",
+    "macros/hello_macro",
+    "macros/hello_macro/hello_macro_derive",
 ]
