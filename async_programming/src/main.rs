@@ -8,7 +8,7 @@ use tokio::{
 #[tokio::main(flavor = "current_thread")]
 async fn main() -> Result<(), Box<dyn Error>> {
     let port = 7878u16;
-    let listen_address = format!("127.0.0.1:{port}");
+    let listen_address = format!("0.0.0.0:{port}");
     let listener = TcpListener::bind(listen_address).await.unwrap();
     println!("Listening on port {}", port);
 
