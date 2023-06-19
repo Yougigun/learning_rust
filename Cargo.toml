@@ -25,4 +25,5 @@ members = [
     "multithreaded_web_server",
     "async_programming",
     "igd_port_forwarding",
+    "uncompile_debug_code",
 ]

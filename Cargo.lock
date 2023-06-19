@@ -930,6 +930,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "uncompile_debug_code"
+version = "0.1.0"
+
+[[package]]
 name = "unicode-bidi"
 version = "0.3.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
