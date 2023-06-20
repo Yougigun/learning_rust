@@ -26,4 +26,7 @@ members = [
     "async_programming",
     "igd_port_forwarding",
     "uncompile_debug_code",
+    "udp_server",
+    "udp_client"
+
 ]

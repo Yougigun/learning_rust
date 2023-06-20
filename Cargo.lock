@@ -930,6 +930,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "udp_client"
+version = "0.1.0"
+
+[[package]]
+name = "udp_server"
+version = "0.1.0"
+
+[[package]]
 name = "uncompile_debug_code"
 version = "0.1.0"
 
