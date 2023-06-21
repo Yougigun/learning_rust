@@ -27,6 +27,7 @@ members = [
     "igd_port_forwarding",
     "uncompile_debug_code",
     "udp_server",
-    "udp_client"
+    "udp_client",
+    "ipv6_tcp_server"
 
 ]
