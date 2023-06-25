@@ -1,3 +1,15 @@
+#![allow(
+    dead_code,
+    unused_imports,
+    unused_variables,
+    unused_mut,
+    unreachable_code,
+    clippy::vec_init_then_push,
+    clippy::unnecessary_sort_by,
+    clippy::match_like_matches_macro,
+    clippy::mutable_key_type,
+    clippy::single_component_path_imports
+)]
 fn main() {
     // Defining a Trait for Common Behavior
     {
@@ -34,10 +46,13 @@ fn main() {
             impl Draw for Button {
                 fn draw(&self) {
                     // code to actually draw a button
-                    println!("Button: width: {}, height: {}, label: {}", self.width, self.height, self.label)
+                    println!(
+                        "Button: width: {}, height: {}, label: {}",
+                        self.width, self.height, self.label
+                    )
                 }
             }
-        };
+        }
         use gui::{Button, Draw, Screen};
         struct SelectBox {
             width: u32,
@@ -48,7 +63,10 @@ fn main() {
         impl Draw for SelectBox {
             fn draw(&self) {
                 // code to actually draw a select box
-                println!("SelectBox: width: {}, height: {}, options: {:?}", self.width, self.height, self.options)
+                println!(
+                    "SelectBox: width: {}, height: {}, options: {:?}",
+                    self.width, self.height, self.options
+                )
             }
         }
         let screen = Screen {
@@ -71,11 +89,9 @@ fn main() {
         };
         screen.run();
     }
-    
+
     // Implementing an Object-Oriented Design Pattern
     {
         // post has three states: Draft, Review, and Published
     }
-
-
 }

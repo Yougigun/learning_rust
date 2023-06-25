@@ -1,3 +1,17 @@
+#![allow(
+    dead_code,
+    unused_imports,
+    unused_variables,
+    unused_mut,
+    unreachable_code,
+    clippy::vec_init_then_push,
+    clippy::unnecessary_sort_by,
+    clippy::match_like_matches_macro,
+    clippy::mutable_key_type,
+    clippy::single_component_path_imports,
+    clippy::match_single_binding,
+)]
+
 use std::vec;
 
 fn main() {
@@ -5,10 +19,7 @@ fn main() {
     {
         // match arm
         let x = Option::Some(5);
-        let x = match x {
-            Option::Some(x) => Some(x + 1),
-            Option::None => None,
-        };
+        let x = x.map(|x| x + 1);
         println!("{:?}", x);
     }
     {
@@ -72,8 +83,8 @@ fn main() {
     }
     {
         // The `matches!` marco
-        let foo = 'f';
-        assert!(matches!(foo, 'a'..='j' | 'A'..='J'));
+        let foo_ = 'f';
+        assert!(matches!(foo_, 'a'..='j' | 'A'..='J'));
 
         let bar = Some(4);
         assert!(matches!(bar, Some(x) if x % 2 == 0));

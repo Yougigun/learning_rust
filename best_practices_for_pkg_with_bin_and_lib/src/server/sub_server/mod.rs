@@ -1,4 +1,5 @@
 // define a server struct
+#[derive(Debug, Default)]
 pub struct Server {
     pub name: String,
     pub port: u16,

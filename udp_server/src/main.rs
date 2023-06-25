@@ -1,3 +1,19 @@
+#![allow(
+    dead_code,
+    unused_imports,
+    unused_variables,
+    unused_mut,
+    unreachable_code,
+    clippy::vec_init_then_push,
+    clippy::unnecessary_sort_by,
+    clippy::match_like_matches_macro,
+    clippy::mutable_key_type,
+    clippy::single_component_path_imports,
+    clippy::match_single_binding,
+    clippy::needless_borrow,
+    clippy::missing_safety_doc,
+    unused_unsafe
+)]
 use std::net::UdpSocket;
 use std::str;
 // what is udp?
@@ -23,6 +39,21 @@ fn main() -> std::io::Result<()> {
         let received_data = str::from_utf8(&buf[..amt]).expect("Invalid UTF-8 data received");
         println!("Received '{}' from {}", received_data, src);
 
-        socket.send_to(&buf[..amt], &src)?;
+        socket.send_to(&buf[..amt], src)?;
+        println!("Sent '{}' to {}", received_data, src)
     }
+    #[derive(Debug)]
+    enum Message {
+        Quit,
+        ChangeColor(i32, i32, i32),
+        Move { x: i32, y: i32 },
+        Write(String),
+    }
+    let m = Message::Write(String::from("hello"));
+    let a = m;
+    println!("{:?}", m);
+    let a = vec![1,2];
+    let v = a;
+    println!("{:?}", a);
+
 }

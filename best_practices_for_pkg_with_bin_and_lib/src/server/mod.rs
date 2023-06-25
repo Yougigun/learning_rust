@@ -1,5 +1,12 @@
-
+#![allow(
+    dead_code,
+    unused_imports,
+    unused_variables,
+    unused_mut,
+    unreachable_code
+)]
 // define a server struct
+#[derive(Debug, Default)]
 pub struct Server {
     pub name: String,
     pub port: u16,
@@ -16,6 +23,5 @@ impl Server {
         }
     }
 }
-
 
 pub mod sub_server;

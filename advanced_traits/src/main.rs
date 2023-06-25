@@ -1,3 +1,11 @@
+#![allow(
+    dead_code,
+    unused_imports,
+    unused_variables,
+    unused_mut,
+    unreachable_code
+)]
+
 use std::fmt::Display;
 
 fn main() {
@@ -19,7 +27,7 @@ fn main() {
             type Item = i32;
 
             fn next(&mut self) -> Option<i32> {
-                return Some(7);
+                Some(7)
             }
         }
         #[derive(Clone)]
@@ -31,7 +39,7 @@ fn main() {
             type Item = T;
 
             fn next(&mut self) -> Option<T> {
-                return Some(self.val.clone());
+                Some(self.val.clone())
             }
         }
 

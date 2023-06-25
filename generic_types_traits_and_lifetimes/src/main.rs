@@ -1,3 +1,14 @@
+#![allow(
+    dead_code,
+    unused_imports,
+    unused_variables,
+    unused_mut,
+    unreachable_code,
+    clippy::vec_init_then_push,
+    clippy::unnecessary_sort_by,
+    clippy::match_like_matches_macro,
+    clippy::mutable_key_type
+)]
 fn main() {
     // Generic Types, Traits, and Lifetimes
     // generics are abstract stand-ins for concrete types or other properties
@@ -140,17 +151,17 @@ fn main() {
     let integer = Some(5);
     let float = Some(5.0);
     // The monomorphized version of the code looks similar to the following:
-    enum Option_i32 {
+    enum OptionI32 {
         Some(i32),
         None,
     }
 
-    enum Option_f64 {
+    enum OptionF64 {
         Some(f64),
         None,
     }
-    let integer = Option_i32::Some(5);
-    let float = Option_f64::Some(5.0);
+    let integer = OptionI32::Some(5);
+    let float = OptionF64::Some(5.0);
 
     // Traits: Defining Shared Behavior
     // - trait define functionality a particular type has and can share with other types
@@ -418,12 +429,12 @@ fn main() {
     // }
 
     // Lifetime Annotations in Struct Definitions
-    struct importantExcerpt<'a> {
+    struct ImportantExcerpt<'a> {
         part: &'a str,
     }
     let novel = String::from("Call me Ishmael. Some years ago...");
-    let first_sentence = novel.split(".").next().expect("Could not find a '.'");
-    let i = importantExcerpt {
+    let first_sentence = novel.split('.').next().expect("Could not find a '.'");
+    let i = ImportantExcerpt {
         part: first_sentence,
     };
 
@@ -444,13 +455,13 @@ fn main() {
                 return &s[0..i];
             }
         }
-        &s[..]
+        s
     }
 
     // Lifetime Annotations in Method Definitions
     // https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html#lifetime-annotations-in-method-definitions
 
-    impl<'a> importantExcerpt<'a> {
+    impl<'a> ImportantExcerpt<'a> {
         fn level(&self) -> i32 {
             3
         }

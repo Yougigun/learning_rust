@@ -1,9 +1,21 @@
+#![allow(
+    dead_code,
+    unused_imports,
+    unused_variables,
+    unused_mut,
+    unreachable_code,
+    clippy::vec_init_then_push,
+    clippy::unnecessary_sort_by,
+    clippy::match_like_matches_macro,
+    clippy::mutable_key_type,
+    clippy::single_component_path_imports
+)]
 use std::io::{Read, Write};
 use std::net::{TcpListener, TcpStream};
 use std::thread;
 
 fn handle_client(mut stream: TcpStream) {
-    let mut data = [0 as u8; 50]; // using 50 byte buffer
+    let mut data: [u8; 50] = [0; 50]; // using 50 byte buffer
     while match stream.read(&mut data) {
         Ok(size) => {
             if size == 0 {
@@ -67,7 +79,7 @@ fn test_client() {
             stream.write_all(msg).unwrap();
             println!("Sent Hello, awaiting reply...");
 
-            let mut data = [0 as u8; 50]; // using 50 byte buffer
+            let mut data: [u8; 50] = [0; 50]; // using 50 byte buffer
             match stream.read(&mut data) {
                 Ok(s) => {
                     if let Ok(text) = from_utf8(&data[..s]) {

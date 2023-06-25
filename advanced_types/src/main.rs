@@ -1,3 +1,10 @@
+#![allow(
+    dead_code,
+    unused_imports,
+    unused_variables,
+    unused_mut,
+    unreachable_code
+)]
 use std::ops::Deref;
 
 fn main() {

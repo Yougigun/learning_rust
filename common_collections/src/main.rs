@@ -1,3 +1,14 @@
+#![allow(
+    dead_code,
+    unused_imports,
+    unused_variables,
+    unused_mut,
+    unreachable_code,
+    clippy::vec_init_then_push,
+    clippy::unnecessary_sort_by,
+    clippy::match_like_matches_macro,
+    clippy::mutable_key_type
+)]
 fn main() {
     // example to use vector
     println!("example to use vector");
@@ -267,24 +278,20 @@ fn main() {
     let mut v = vec![1, 2, 3, 4, 5, 6, 7, 8, 9];
     let (median, mode) = find_median_and_mode(&mut v);
     // Convert strings to pig latin. The first consonant of each word is
-    //  moved to the end of the word and “ay” is added, so “first” becomes 
-    // “irst-fay.” Words that start with a vowel have “hay” added to the 
-    // end instead (“apple” becomes “apple-hay”). Keep in mind the details 
+    //  moved to the end of the word and “ay” is added, so “first” becomes
+    // “irst-fay.” Words that start with a vowel have “hay” added to the
+    // end instead (“apple” becomes “apple-hay”). Keep in mind the details
     // about UTF-8 encoding!
     println!("Convert strings to pig latin");
     let s = "hello world wonderful world";
     let pig_latin = convert_to_pig_latin(s);
     println!("pig_latin = {}", pig_latin);
 
-    // Using a hash map and vectors, create a text interface to allow a user to 
+    // Using a hash map and vectors, create a text interface to allow a user to
     // add employee names to a department in a company. For example, “Add Sally
-    // to Engineering” or “Add Amir to Sales.” Then let the user retrieve a 
-    // list of all people in a department or all people in the company by 
+    // to Engineering” or “Add Amir to Sales.” Then let the user retrieve a
+    // list of all people in a department or all people in the company by
     // department, sorted alphabetically.
-
-
-
-
 }
 
 // fn find median and mode of a vector

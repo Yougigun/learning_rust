@@ -1,3 +1,19 @@
+#![allow(
+    dead_code,
+    unused_imports,
+    unused_variables,
+    unused_mut,
+    unreachable_code,
+    clippy::vec_init_then_push,
+    clippy::unnecessary_sort_by,
+    clippy::match_like_matches_macro,
+    clippy::mutable_key_type,
+    clippy::single_component_path_imports,
+    clippy::match_single_binding,
+    clippy::needless_borrow,
+    clippy::missing_safety_doc,
+    unused_unsafe
+)]
 fn main() {
     // Writing Automated Tests
     // https://doc.rust-lang.org/book/ch11-00-testing.html#writing-automated-tests
@@ -175,7 +191,7 @@ mod tests {
             width: 5,
             height: 1,
         };
-        assert!(larger.can_hold(&smaller) == true)
+        assert!(larger.can_hold(&smaller))
     }
     #[test]
     fn smaller_cannot_hold_larger() {
@@ -187,7 +203,7 @@ mod tests {
             width: 5,
             height: 1,
         };
-        assert!(smaller.can_hold(&larger) == false)
+        assert!(!smaller.can_hold(&larger))
     }
 
     fn add_two(a: i32) -> i32 {
@@ -226,7 +242,7 @@ mod tests {
 
     impl Guess {
         pub fn new(value: i32) -> Guess {
-            if value < 1 || value > 100 {
+            if !(1..=100).contains(&value) {
                 panic!("Guess value must be between 1 and 100, got {}.", value);
             }
 
@@ -247,7 +263,7 @@ mod tests {
 
     // Using Result<T, E> in Tests
     #[test]
-    fn it_works_using_Result() -> Result<(), String> {
+    fn it_works_using_result() -> Result<(), String> {
         if 2 + 2 == 4 {
             Ok(())
         } else {

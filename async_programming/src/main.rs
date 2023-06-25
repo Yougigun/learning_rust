@@ -1,3 +1,10 @@
+#![allow(
+    dead_code,
+    unused_imports,
+    unused_variables,
+    unused_mut,
+    unreachable_code
+)]
 use std::{error::Error, time::Duration};
 use tokio::{
     fs,
@@ -14,7 +21,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
     loop {
         let (stream, _) = listener.accept().await.unwrap();
-        let _ = tokio::spawn(async { handle_connection(stream).await });
+        tokio::spawn(async { handle_connection(stream).await });
     }
 }
 

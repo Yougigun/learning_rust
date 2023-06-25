@@ -1,3 +1,15 @@
+#![allow(
+    dead_code,
+    unused_imports,
+    unused_variables,
+    unused_mut,
+    unreachable_code,
+    clippy::vec_init_then_push,
+    clippy::unnecessary_sort_by,
+    clippy::match_like_matches_macro,
+    clippy::mutable_key_type,
+    clippy::single_component_path_imports
+)]
 use igd;
 use std::net::SocketAddrV4;
 use std::str::FromStr;
@@ -49,8 +61,8 @@ async fn add_port() {
         }
         Ok(_) => {
             println!(
-                "It worked. port forwarded: router's port :{} -> {}",
-                6902, "192.168.1.46:7878"
+                "It worked. port forwarded: router's port :{} -> 192.168.1.46:7878",
+                6902
             );
         }
     }

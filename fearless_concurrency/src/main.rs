@@ -1,3 +1,14 @@
+#![allow(
+    dead_code,
+    unused_imports,
+    unused_variables,
+    unused_mut,
+    unreachable_code,
+    clippy::vec_init_then_push,
+    clippy::unnecessary_sort_by,
+    clippy::match_like_matches_macro,
+    clippy::mutable_key_type
+)]
 use std::{
     sync::{Arc, Mutex},
     thread::{self, sleep},
@@ -40,7 +51,7 @@ fn main() {
         let mut i = 32;
 
         // scope will return until all in-scope thread are all jointed, so the lifetime is known
-        let scope = thread::scope(|s| {
+        thread::scope(|s| {
             s.spawn(|| {
                 // Can borrow/move v from the outer scope
                 println!("Here's a vector: {:?}", v);
@@ -129,7 +140,6 @@ fn main() {
         }
         println!("Result after join:\t{}", *counter.lock().unwrap());
         println!("strong_count after join: {}", Arc::strong_count(&counter));
-
     }
 }
 use std::sync::mpsc;

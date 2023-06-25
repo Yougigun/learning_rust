@@ -1,3 +1,19 @@
+#![allow(
+    dead_code,
+    unused_imports,
+    unused_variables,
+    unused_mut,
+    unreachable_code,
+    clippy::vec_init_then_push,
+    clippy::unnecessary_sort_by,
+    clippy::match_like_matches_macro,
+    clippy::mutable_key_type,
+    clippy::single_component_path_imports,
+    clippy::match_single_binding,
+    clippy::needless_borrow,
+    clippy::missing_safety_doc,
+    unused_unsafe
+)]
 fn main() {
     // Unsafe code in Rust is code where we're allowed to ignore or bypass some
     // of the restrictions Rust places on us, and tell the compiler "Don't worry, I got this.

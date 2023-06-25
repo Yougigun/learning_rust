@@ -1,3 +1,15 @@
+#![allow(
+    dead_code,
+    unused_imports,
+    unused_variables,
+    unused_mut,
+    unreachable_code,
+    clippy::vec_init_then_push,
+    clippy::unnecessary_sort_by,
+    clippy::match_like_matches_macro,
+    clippy::mutable_key_type,
+    clippy::single_component_path_imports
+)]
 use std::{
     sync::{mpsc, Arc, Mutex},
     thread,
@@ -103,7 +115,7 @@ impl Worker {
 
 fn test() {
     let (p, c) = mpsc::channel::<i32>();
-    p.send(5);
+    let _ = p.send(5);
     drop(p);
     let r1 = c.recv().unwrap();
     println!("Got {}", r1);

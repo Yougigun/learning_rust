@@ -1,3 +1,17 @@
+#![allow(
+    dead_code,
+    unused_imports,
+    unused_variables,
+    unused_mut,
+    unreachable_code,
+    clippy::vec_init_then_push,
+    clippy::unnecessary_sort_by,
+    clippy::match_like_matches_macro,
+    clippy::mutable_key_type,
+    clippy::single_component_path_imports,
+    clippy::match_single_binding,
+    clippy::needless_borrow,
+)]
 use std::{
     cell::Cell,
     ops::Deref,
@@ -214,15 +228,15 @@ fn main() {
     struct Foo {
         x: i32,
     }
-    let foo = Foo { x: 42 };
-    let rc_foo = Rc::new(foo);
+    let foo_ = Foo { x: 42 };
+    let rc_foo = Rc::new(foo_);
 
     // Get a reference to the data using `as_ref`
     let foo_ref = Rc::as_ref(&rc_foo);
     println!("{}", foo_ref.x);
 
     // Or simply dereference the smart pointer
-    println!("{}", (*rc_foo).x);
+    println!("{}", rc_foo.x);
 
     let box_vec = Box::new(vec![1, 2, 3, 4, 5]);
     let box_vec2 = *box_vec;
@@ -240,12 +254,12 @@ fn main() {
         }
     }
 
-    let mybox2_vec = MyBox2::new(vec![1, 2, 3, 4, 5]);
+    let my_box2_vec = MyBox2::new(vec![1, 2, 3, 4, 5]);
     // let mybox2_vec2 = *mybox2_vec; // cannot compile but box allows this by compiler
-    let mybox2_vec2: &Vec<i32> = &*mybox2_vec; // call deref() on MyBox2<Vec<i32>> then * and &
-    let mybox2_vec2: &Vec<i32> = mybox2_vec.as_ref(); // call as_ref() on Vec<i32>
-    let mybox2_vec2 = &mybox2_vec as &Vec<i32>; // using coercion
-    let mybox2_vec2 = mybox2_vec.deref(); // call deref() on MyBox2<Vec<i32>>
+    let my_box2_vec2: &Vec<i32> = &my_box2_vec; // call deref() on MyBox2<Vec<i32>> then * and &
+    let my_box2_vec2: &Vec<i32> = my_box2_vec.as_ref(); // call as_ref() on Vec<i32>
+    let my_box2_vec2 = &my_box2_vec as &Vec<i32>; // using coercion
+    let my_box2_vec2 = my_box2_vec.deref(); // call deref() on MyBox2<Vec<i32>>
 
     let rc_vec = Rc::new(vec![1, 2, 3]);
     // let rv = *rc_vec; // cannot compile
