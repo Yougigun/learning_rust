@@ -88,8 +88,8 @@ impl Worker {
                     println!("Worker {} got a job; executing.", id);
                     job();
                 }
-                Err(_) => {
-                    println!("Worker {} got a error; finishing worker", id);
+                Err(err) => {
+                    println!("Worker {} got a error: {}; finishing worker", id, err);
                     break;
                 }
             }

@@ -28,6 +28,7 @@ members = [
     "uncompile_debug_code",
     "udp_server",
     "udp_client",
-    "ipv6_tcp_server"
+    "ipv6_tcp_server",
+    "address_vec"
 
 ]

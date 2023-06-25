@@ -15,8 +15,7 @@ fn main() {
     println!("Listening on port {}", port);
     // using thread pool
     let thread_pool = ThreadPool::new(4);
-
-    for stream in listener.incoming().take(2) {
+    for stream in listener.incoming() {
         let stream = stream.unwrap();
         // create a new thread for each connection
         // thread::spawn(move || {

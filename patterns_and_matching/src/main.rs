@@ -280,23 +280,22 @@ fn main() {
         // Sometimes we want to test a value as part of a pattern, and also
         // assign that value to a variable. We can do this with the at operator
         enum Message {
-            Hello { id: i32, text: &'static str },
+            Hello { id: i32, _text: &'static str },
         }
 
         let msg = Message::Hello {
             id: 5,
-            text: "hello",
+            _text: "hello",
         };
-
         match msg {
             Message::Hello {
                 id: id_variable @ 3..=7,
-                text: _, // cannot text filed in the scope
+                _text: _, // cannot text filed in the scope
             } => println!("Found an id in range: {}", id_variable),
             // Message::Hello { id: 10..=12 } => {
             //     println!("Found an id({}) in another range",id)
             // } // cannot compile
-            Message::Hello { id, text: _ } => println!("Found some other id: {}", id),
+            Message::Hello { id, _text: _ } => println!("Found some other id: {}", id),
         }
     }
 }

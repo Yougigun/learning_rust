@@ -54,7 +54,6 @@ fn main() {
     // close the socket server
     drop(listener);
 }
-
 // test client
 #[test]
 fn test_client() {
@@ -65,7 +64,7 @@ fn test_client() {
 
             let msg = b"Hello!";
 
-            stream.write(msg).unwrap();
+            stream.write_all(msg).unwrap();
             println!("Sent Hello, awaiting reply...");
 
             let mut data = [0 as u8; 50]; // using 50 byte buffer

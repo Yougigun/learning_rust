@@ -3,6 +3,10 @@
 version = 3
 
 [[package]]
+name = "address_vec"
+version = "0.1.0"
+
+[[package]]
 name = "advanced_function_and_closures"
 version = "0.1.0"
 
