@@ -1,7 +1,21 @@
 #![allow(warnings)]
 use std::{collections::HashMap, mem::size_of_val};
 
-pub fn closure_task_1() {
+fn add_one(x: i32) -> i32 {
+    x + 1
+}
+// Suppose this is your closure
+static ADD_ONE: fn(i32) -> i32 = add_one;
+
+// The Rust compiler essentially turns it into something like this
+struct ClosureEnvironment;
+impl ClosureEnvironment {
+    fn call(&self, x: i32) -> i32 {
+        add_one(x)
+    }
+}
+
+pub fn closure_size() {
     // length is 0
     let c1 = || println!("closure 1");
     //  regardless of the argument, length is 0
@@ -31,12 +45,36 @@ pub fn closure_task_1() {
     )
 }
 
+// pub trait FnOnce<Args> {
+//     type Output;
+//     
+//     When you call a closure, the compiler will generate code that calls the call_once method on the closure.
+//     This method takes ownership of the closure leading to closure being only able to be called once.
+//     extern "rust-call" fn call_once(self, args: Args) -> Self::Output;
+// }
+pub fn demo_fn_once() {
+    let name = String::from("gary");
+    
+    
+    // move name to closure and because of name's move, closure is FnOnce
+    let c = move |greeting: String| (greeting, name);
+    let res = c(String::from("Hello"));
+    println!("res: {:?}", res);
+
+    // can't call c again, because name has been moved leading to c being FnOnce
+    // c(String::from("Hi"));
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
     fn it_works() {
-        closure_task_1()
+        closure_size()
+    }
+    #[test]
+    fn test_fn_once() {
+        demo_fn_once()
     }
 }
