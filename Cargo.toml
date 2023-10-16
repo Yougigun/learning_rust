@@ -5,7 +5,6 @@ members = [
     "best_practices_for_pkg_with_bin_and_lib",
     "common_collections",
     "error_handling",
-    "rustlings",
     "generic_types_traits_and_lifetimes",
     "writing_automated_tests",
     "minigrep",
@@ -31,6 +30,8 @@ members = [
     "ipv6_tcp_server",
     "address_vec",
     "thread_sleep_control",
-    "using_docker_in_rust"
-
+    "using_docker_in_rust",
+    "closure"
 ]
+
+resolver = "2"
