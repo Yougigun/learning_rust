@@ -8,7 +8,7 @@ fn add_one(x: i32) -> i32 {
 // Suppose this is your closure
 static ADD_ONE: fn(i32) -> i32 = add_one;
 
-// The Rust compiler essentially turns it into something like this
+// The Rust compiler essentially create a anonymous type like this
 struct Closure<'a> {
     // capture by value
     env_var: i32,
@@ -19,6 +19,8 @@ struct Closure<'a> {
     // capture by mutable reference
     env_var3: &'a mut String,
 }
+
+// Compiler implement Fn, FnMut or FnOnce for Closure
 impl<'a> Closure<'a> {
     // compiler implement it by checking it is Fn, FnMut or FnOnce
     fn call(&self, x: i32) -> i32 {
@@ -127,7 +129,7 @@ fn not_closure(arg: String) -> (String, String) {
 //     ) -> Self::Output;
 // }
 
-pub fn demo_fu_mut_closure() {
+pub fn demo_fn_mut_closure() {
     let mut name1 = String::from("gary");
     let mut name2 = String::from("rosie");
 
