@@ -31,7 +31,9 @@ members = [
     "address_vec",
     "thread_sleep_control",
     "using_docker_in_rust",
-    "closure"
+    "closure",
+    "test_rust",
+    "trait_object"
 ]
 
 resolver = "2"
